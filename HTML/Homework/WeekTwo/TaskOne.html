@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+
+.fixed_headers {
+  width: 750px;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+  th { text-decoration: underline; }
+  th, td {
+    padding: 5px;
+    text-align: left;
+  }
+  
+  td:nth-child(1), th:nth-child(1) { min-width: 200px; }
+  td:nth-child(2), th:nth-child(2) { min-width: 200px; }
+  td:nth-child(3), th:nth-child(3) { width: 350px; }
+
+  thead {
+    background-color: #333;
+    color: #FDFDFD;
+  }
+  thead tr {
+      display: block;
+      position: relative;
+    }
+  tbody {
+    display: block;
+    overflow: auto;
+    width: 100%;
+    height: 300px;
+  }
+    tbody tr:nth-child(even) {
+      background-color: #DDD;
+    }
+
+.old_ie_wrapper {
+  height: 300px;
+  width: 750px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  tbody { height: auto; }
+}
+    </style>
+    <title>Task One</title>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr class="header">
+          <th></th>
+          <th>Header 1</th>
+          <th>Header 2</th>
+          <th>Header 3</th>
+          <th>Header 4</th>
+          <th>Header 5</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Line 1</th>
+          <td>23</td>
+          <td>23</td>
+          <td>23</td>
+          <td>23</td>
+          <td>23</td>
+        </tr>
+        <tr>
+          <th>Line 2</th>
+          <td>23</td>
+          <td>23</td>
+          <td>23</td>
+          <td>23</td>
+          <td>23</td>
+        </tr>
+        <tr>
+          <th>Line 3</th>
+          <td>23</td>
+          <td>23</td>
+          <td>23</td>
+          <td>23</td>
+          <td>23</td>
+        </tr>
+        <tr>
+          <th>Line 4</th>
+          <td>23</td>
+          <td>23</td>
+          <td>23</td>
+          <td>23</td>
+          <td>23</td>
+        </tr>
+        <tr>
+          <th>Line 5</th>
+          <td>23</td>
+          <td>23</td>
+          <td>23</td>
+          <td>23</td>
+          <td>23</td>
+        </tr>
+        <tr>
+          <th>Line 6</th>
+          <td>23</td>
+          <td>23</td>
+          <td>23</td>
+          <td>23</td>
+          <td>23</td>
+        </tr>
+        <tr>
+          <th>Line 7</th>
+          <td>23</td>
+          <td>23</td>
+          <td>23</td>
+          <td>23</td>
+          <td>23</td>
+        </tr>
+        <tr>
+          <th>Line 8</th>
+          <td>23</td>
+          <td>23</td>
+          <td>23</td>
+          <td>23</td>
+          <td>23</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
