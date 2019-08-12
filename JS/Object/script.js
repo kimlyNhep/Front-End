@@ -1,9 +1,9 @@
-var Person = {
-    firstname : "kimly",
-    lastname : "Nhep",
-    age : 21,
-    add : function(a,b) {
-        return a + b;
-    }
-};
-document.getElementById("text").innerHTML = Person["firstname"];
+var obj = new Object();
+obj.name = "kimly";
+obj.age = 21;
+obj.gender = "male";
+
+var arr = new Array("abc", "acd", "dac");
+
+console.log(arr[0]);
+console.log(arr.length);

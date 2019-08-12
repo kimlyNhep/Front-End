@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Click Counter</title>
+  </head>
+  <body>
+    <button onclick="clickCounter()" id="root">click</button>
+    <hr />
+    <label for="name">name</label>
+    <input type="text" id="name" />
+    <label for="age">age</label>
+    <input type="number" id="age" />
+    <button onclick="addStudent()" id="add">Add</button>
+    <script>
+      var number = 0;
+      var obj = new Array();
+      function clickCounter() {
+        number++;
+        obj.push(number);
+        document.getElementById("root").innerHTML = number;
+      }
+
+      var students = new Array();
+      function addStudent() {
+        var name = document.getElementsById("name").value;
+        var age = document.getElementsById("age").value;
+        console.log(name);
+      }
+    </script>
+  </body>
+</html>
