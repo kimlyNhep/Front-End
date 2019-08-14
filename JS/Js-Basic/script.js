@@ -35,5 +35,16 @@ switch (true) {
   default:
     console.log(firstname + "is a man.");
 }
-//Truthy , Falsy values and equality operators
-//falsy values: underfined, null,0,'',NaN
+//Object and Properties
+var John = {
+  firstname: "John",
+  lastname: "Smith",
+  birthYear: 1990,
+  family: ["jane", "Mark", "Bob", "Emily"],
+  job: "teacher",
+  isMarried: false
+};
+
+console.log(John.firstname);
+console.log(John["job"]);
+console.log(John.family);
