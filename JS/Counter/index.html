@@ -25,9 +25,13 @@
 
       var students = new Array();
       function addStudent() {
-        var name = document.getElementsById("name").value;
-        var age = document.getElementsById("age").value;
-        console.log(name);
+        var name = document.getElementById("name").value;
+        var age = document.getElementById("age").value;
+        var student = {
+          name,
+          age
+        };
+        students.push(student);
       }
     </script>
   </body>

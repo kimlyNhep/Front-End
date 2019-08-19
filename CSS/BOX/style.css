@@ -1,0 +1,139 @@
+.outter {
+  width: 500px;
+  height: 500px;
+  border: 1px solid black;
+  float: left;
+}
+.firstInner {
+  width: 80%;
+  height: 80%;
+  border: 1px solid black;
+  margin: 10% 10%;
+}
+.secondInnerOne {
+  width: 80%;
+  height: 35%;
+  border: 1px solid black;
+  margin: 10% 10%;
+}
+.secondInnerTwo {
+  width: 80%;
+  height: 35%;
+  border: 1px solid black;
+  margin: 10% 10%;
+}
+.thirdInnerOne {
+  width: 25%;
+  height: 80%;
+  border: 1px solid black;
+  float: left;
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-top: 5%;
+  text-align: center;
+}
+.thirdInnerOne a {
+  text-decoration: none;
+  color: crimson;
+  vertical-align: middle;
+}
+.thirdInnerOne a:hover {
+  color: darkorange;
+  text-decoration: none;
+}
+.thirdInnerTwo {
+  width: 25%;
+  height: 80%;
+  border: 1px solid black;
+  float: left;
+  margin-right: 5%;
+  margin-top: 5%;
+}
+.thirdInnerTwo span {
+  text-align: center;
+  vertical-align: middle;
+}
+.thirdInnerThree {
+  width: 25%;
+  height: 80%;
+  border: 1px solid black;
+  float: left;
+  margin-top: 5%;
+  text-align: center;
+}
+.thirdInnerFour {
+  width: 20%;
+  height: 80%;
+  border: 1px solid black;
+  float: left;
+  margin-top: 5%;
+  margin-right: 5%;
+  margin-left: 1.25%;
+}
+
+.thirdInnerFive {
+  width: 20%;
+  height: 80%;
+  border: 1px solid black;
+  float: left;
+  margin-top: 5%;
+  margin-right: 5%;
+}
+.thirdInnerSix {
+  width: 20%;
+  height: 80%;
+  border: 1px solid black;
+  float: left;
+  margin-top: 5%;
+  margin-right: 5%;
+}
+.thirdInnerSeven {
+  width: 20%;
+  height: 80%;
+  border: 1px solid black;
+  float: left;
+  margin-top: 5%;
+}
+.box {
+  width: 500px;
+  height: 500px;
+  float: left;
+  margin-left: 20px;
+}
+
+.top {
+  width: 98%;
+  height: 20%;
+  background-color: chartreuse;
+  margin-left: 1%;
+  margin-top: 1%;
+}
+.middle {
+  width: 98%;
+  height: 60%;
+  margin-left: 1%;
+}
+.middle .left {
+  width: 20%;
+  height: 100%;
+  background-color: blueviolet;
+  float: left;
+}
+.middle .center {
+  width: 60%;
+  height: 100%;
+  background-color: brown;
+  float: left;
+}
+.middle .right {
+  width: 20%;
+  height: 100%;
+  background-color: coral;
+  float: left;
+}
+.bottom {
+  width: 98%;
+  height: 20%;
+  background-color: darkkhaki;
+  margin-left: 1%;
+}

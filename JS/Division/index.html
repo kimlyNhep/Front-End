@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>1-100</h1>
+    <button onclick="Divide()">Divistion</button>
+    <br />
+    <table style="border: 1px solid black" id="table">
+      <thead>
+        <th>Result</th>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script>
+      // 2 , 3, 5 (1-100)
+      var divideBy2 = new Array();
+      var divideBy3 = new Array();
+      var divideBy5 = new Array();
+      var divideByall = new Array();
+      for (var i = 1; i <= 100; i++) {
+        if (i % 2 === 0) divideBy2.push(i);
+        if (i % 3 === 0) divideBy3.push(i);
+        if (i % 5 === 0) divideBy5.push(i);
+        if (i % (2 * 3 * 5) === 0) divideByall.push(i);
+      }
+      function Divide() {
+        var table = document.getElementById("table");
+
+        for (var i = 0; i < divideBy2.length; i++) {
+          var row = table.insertRow(0);
+          var cell1 = row.insertCell(0);
+          var cell2 = row.insertCell(1);
+          var cell3 = row.insertCell(2);
+          var cell4 = row.insertCell(3);
+          if (divideBy2[i] != undefined) cell1.innerHTML = divideBy2[i];
+          else cell1.innerHTML = "";
+          if (divideBy3[i] != undefined) cell2.innerHTML = divideBy3[i];
+          else cell2.innerHTML = "";
+          if (divideBy5[i] != undefined) cell3.innerHTML = divideBy5[i];
+          else cell3.innerHTML = "";
+          if (divideByall[i] != undefined) cell4.innerHTML = divideByall[i];
+          else cell4.innerHTML = "";
+        }
+      }
+    </script>
+  </body>
+</html>
