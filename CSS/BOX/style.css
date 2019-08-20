@@ -137,3 +137,41 @@
   background-color: darkkhaki;
   margin-left: 1%;
 }
+.wrap {
+  width: 500px;
+  height: 500px;
+  float: left;
+}
+
+.row1 {
+  width: 100%;
+  height: 20%;
+  background-color: crimson;
+}
+.row2 {
+  width: 100%;
+  height: 30%;
+}
+.row2 .col1 {
+  width: 20%;
+  height: 100%;
+  background-color: chartreuse;
+  float: left;
+}
+.row2 .col2 {
+  width: 50%;
+  height: 50%;
+  background-color: brown;
+  float: left;
+}
+.row2 .col3 {
+  width: 30%;
+  height: 100%;
+  background-color: blue;
+  float: left;
+}
+.row3 .col1 {
+  width: 30%;
+  height: 100%;
+  background-color: cornflowerblue;
+}

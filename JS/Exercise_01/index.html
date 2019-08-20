@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="script.js" type="text/javascript"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="form-input">
+      <form name="inputForm">
+        <label for="username">Username</label>
+        <input type="text" name="username" /><br />
+        <label for="age">Age</label>
+        <input type="number" name="age" min="0" /><br />
+        <label for="sex">Sex</label>
+        <input type="text" name="sex" /><br />
+        <label for="DOB">Date of Birth</label>
+        <input type="date" name="DOB" /><br />
+        <label for="Academic Year">Academic Year</label>
+        <input type="number" name="AcademicYear" /><br />
+        <label for="address">Address</label>
+        <input type="text" name="address" /><br />
+        <input type="button" value="Add" onclick="getForm()" />
+      </form>
+    </div>
+    <div class="table-show">
+      <table id="table-element">
+        <tr>
+          <th>Username</th>
+          <th>Age</th>
+          <th>Sex</th>
+          <th>Date of Birth</th>
+          <th>Academic Year</th>
+          <th>Address</th>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
