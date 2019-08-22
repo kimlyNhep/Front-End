@@ -3,30 +3,52 @@
   <head>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" type="text/javascript"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
     <title>Document</title>
   </head>
   <body onload="FormLoad()">
-    <div class="form-input">
-      <form name="inputForm">
-        <label for="id">Id</label>
-        <input type="text" name="id" /><br />
-        <label for="name">Name</label>
-        <input type="text" name="name" required /><br />
-        <label for="date">Date</label>
-        <input type="date" name="date" /> <br />
-        <label for="start">Start Time</label>
-        <input type="time" name="start" /><br />
-        <label for="end">End Time</label>
-        <input type="time" name="end" /><br />
-        <label for="ClassRoom">Classroom</label>
-        <input type="text" name="ClassRoom" /><br />
-        <label for="Subject">Subject</label>
-        <input type="text" name="Subject" required pattern="C|C\+\+" /><br />
-        <label for="Teacher">Teacher</label>
-        <input type="text" name="Teacher" /><br />
-        <input type="button" value="Add" onclick="getForm()" />
-      </form>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <div class="form-input">
+          <form name="inputForm">
+            <label for="id">Id</label>
+            <input type="text" name="id" /><br />
+            <label for="name">Name</label>
+            <input type="text" name="name" required /><br />
+            <label for="date">Date</label>
+            <input type="date" name="date" /> <br />
+            <label for="start">Start Time</label>
+            <input type="time" name="start" /><br />
+            <label for="end">End Time</label>
+            <input type="time" name="end" /><br />
+            <label for="ClassRoom">Classroom</label>
+            <input type="text" name="ClassRoom" /><br />
+            <label for="Subject">Subject</label>
+            <input
+              type="text"
+              name="Subject"
+              required
+              pattern="C|C\+\+"
+            /><br />
+            <label for="Teacher">Teacher</label>
+            <input type="text" name="Teacher" /><br />
+            <input
+              type="button"
+              class="btn btn-primary"
+              value="Add"
+              onclick="getForm()"
+            />
+          </form>
+        </div>
+      </div>
     </div>
+
     <div class="table-show">
       <table id="table-element">
         <tr>
