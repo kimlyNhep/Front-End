@@ -1,46 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
     <title>Canvas</title>
   </head>
   <body>
-    <canvas id="line" width="500" height="500"></canvas>
-    <script>
-      var Coord = {
-        x: 0,
-        y: 0
-      };
-      function sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-      }
-      async function draw() {
-        var canvas = document.querySelector("#line");
-        if (canvas.getContext) {
-          var ctx = line.getContext("2d");
-          for (Coord.y = 0; Coord.y < canvas.height; Coord.y++) {
-            for (Coord.x = 0; Coord.x < canvas.width; Coord.x++) {
-              ctx.beginPath();
-              console.log(Coord.x, Coord.y);
-              if (Coord.x + 50 == canvas.width) {
-                for (Coord.y = 0; Coord.y < canvas.height; Coord.y++) {
-                  ctx.moveTo(Coord.x, Coord.y);
-                  ctx.lineTo(Coord.x + 50, Coord.y);
-                  ctx.stroke();
-                  await sleep(10);
-                  ctx.clearRect(0, 0, 500, 500);
-                }
-              } else {
-                ctx.moveTo(Coord.x, Coord.y);
-                ctx.lineTo(Coord.x + 50, Coord.y);
-                ctx.stroke();
-                await sleep(10);
-                ctx.clearRect(0, 0, 500, 500);
-              }
-            }
-          }
-        }
-      }
-      draw();
-    </script>
+    <canvas></canvas>
+    <script src="canvas.js"></script>
   </body>
 </html>
