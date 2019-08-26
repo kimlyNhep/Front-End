@@ -20,10 +20,14 @@ function CreateCell(text) {
   var div = document.createElement("div");
   if (number === 5 || number === 9 || number === 13) div.style.clear = "left";
   div.setAttribute("class", "components");
+  div.classList.add("color");
   div.setAttribute("draggable", "true");
+  if (text == "16") {
+    text = "";
+    div.classList.remove("color");
+  }
   var text = document.createTextNode(text);
-  if (text == 16) div.appendChild("");
-  else div.appendChild(text);
+  div.appendChild(text);
   wrap.appendChild(div);
   number++;
 }
@@ -35,11 +39,63 @@ function CreateWrap() {
 CreateWrap();
 
 //Drag Drop
+var DragSrcEle = null;
+var DropDesEle = null;
+//Drag Start
 function handleDragStart(e) {
   this.style.opacity = "0.4"; // this / e.target is the source node.
+  DragSrcEle = this;
+  e.dataTransfer.effectAlled = "move";
+  e.dataTransfer.setData("text/html", this.innerHTML);
 }
-
+//Drag Over
+function handleDragOver(e) {
+  if (e.preventDefault) {
+    e.preventDefault();
+  }
+  e.dataTransfer.dropEffect = "move";
+  return false;
+}
+//Drag Enter
+function handleDragEnter(e) {
+  this.classList.add("over");
+}
+//Drag Leave
+function handleDragLeave(e) {
+  this.classList.remove("over"); //e.target is previous element
+}
+//Drag End
+function handleDragEnd(e) {
+  //e.target is the source node
+  [].forEach.call(cols, function(col) {
+    col.classList.remove("over");
+  });
+  e.target.style.opacity = "1";
+  //e.target.innerHTML = DropDesEle;
+}
+//Drop
+function handleDrop(e) {
+  if (e.stopPropagation()) {
+    e.stopPropagation(); //stop the broswer from redirecting
+  }
+  //Don't do anything if dropping the same column we're dragging
+  if (DragSrcEle != this) {
+    //Store Destrination Element
+    DropDesEle = this;
+    //Set the source column's HTML to the HTML of the column we dropped on.
+    this.innerHTML = e.dataTransfer.getData("text/html");
+    DragSrcEle.innText = this.innerHTML;
+    console.log(DropDesEle);
+  }
+  //See the section on the DataTransfer object
+  return false;
+}
 var cols = document.querySelectorAll(".components");
 [].forEach.call(cols, function(col) {
   col.addEventListener("dragstart", handleDragStart, false);
+  col.addEventListener("dragover", handleDragOver, false);
+  col.addEventListener("dragenter", handleDragEnter, false);
+  col.addEventListener("dragleave", handleDragLeave, false);
+  col.addEventListener("dragend", handleDragEnd, false);
+  col.addEventListener("drop", handleDrop, false);
 });

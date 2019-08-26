@@ -4,3 +4,10 @@
   height: 100px;
   float: left;
 }
+.components.color {
+  background-color: aquamarine;
+}
+
+.components.over {
+  border: 1px solid red;
+}
