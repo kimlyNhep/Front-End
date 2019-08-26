@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <style>
+      #canvas {
+        border: 1px solid black;
+        margin-top: 5px;
+      }
+    </style>
+    <title>Curve</title>
+  </head>
+  <body onload="DrawCoordinator()">
+    <form name="formInput">
+      <input type="number" min="1" name="A" />
+      <label for="">X<sup>2</sup>+</label>
+      <input type="number" min="1" name="B" />
+      <label for="">X+</label>
+      <input type="number" min="1" name="C" />
+      <input type="button" onclick="Calculate()" value="Find X" />
+    </form>
+    <canvas id="canvas"></canvas>
+    <script src="canvas.js"></script>
+  </body>
+</html>
