@@ -22,6 +22,7 @@ function CreateCell(text) {
   div.setAttribute("class", "components");
   div.classList.add("color");
   div.setAttribute("draggable", "true");
+  div.setAttribute("id", "Element" + number);
   if (text == "16") {
     text = "";
     div.classList.remove("color");
@@ -40,13 +41,13 @@ CreateWrap();
 
 //Drag Drop
 var DragSrcEle = null;
-var DropDesEle = null;
+var Des;
 //Drag Start
 function handleDragStart(e) {
   this.style.opacity = "0.4"; // this / e.target is the source node.
   DragSrcEle = this;
   e.dataTransfer.effectAlled = "move";
-  e.dataTransfer.setData("text/html", this.innerHTML);
+  e.dataTransfer.setData("SrcId", e.target.id);
 }
 //Drag Over
 function handleDragOver(e) {
@@ -71,7 +72,7 @@ function handleDragEnd(e) {
     col.classList.remove("over");
   });
   e.target.style.opacity = "1";
-  //e.target.innerHTML = DropDesEle;
+  e.target.innerHTML = Des.innerHTML;
 }
 //Drop
 function handleDrop(e) {
@@ -80,12 +81,10 @@ function handleDrop(e) {
   }
   //Don't do anything if dropping the same column we're dragging
   if (DragSrcEle != this) {
-    //Store Destrination Element
-    DropDesEle = this;
     //Set the source column's HTML to the HTML of the column we dropped on.
-    this.innerHTML = e.dataTransfer.getData("text/html");
-    DragSrcEle.innText = this.innerHTML;
-    console.log(DropDesEle);
+    e.target.appendChild(
+      document.getElementById(e.dataTransfer.getData("SrcId"))
+    );
   }
   //See the section on the DataTransfer object
   return false;
