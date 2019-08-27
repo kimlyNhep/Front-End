@@ -51,11 +51,7 @@ CreateWrap();
 
 //Drag Drop
 var DragSrcEle = null;
-<<<<<<< HEAD
-var Des;
-=======
 var DesId = "";
->>>>>>> 39348c1a4cc50209b696476562fa3b1a70cc599b
 //Drag Start
 function handleDragStart(e) {
   //this.style.opacity = "0.4"; // this / e.target is the source node.
@@ -85,10 +81,6 @@ function handleDragEnd(e) {
   [].forEach.call(cols, function(col) {
     col.classList.remove("over");
   });
-<<<<<<< HEAD
-  e.target.style.opacity = "1";
-  e.target.innerHTML = Des.innerHTML;
-=======
 
   for (var i = e.target.attributes.length - 1; i >= 0; i--) {
     e.target.removeAttribute(e.target.attributes[i].name);
@@ -103,7 +95,6 @@ function handleDragEnd(e) {
   });
   //e.target.innerHTML = JSON.parse(components[DesId - 1]).key;
   //console.log(JSON.parse(components[DesId - 1]).key);
->>>>>>> 39348c1a4cc50209b696476562fa3b1a70cc599b
 }
 //Drop
 function handleDrop(e) {
@@ -112,12 +103,6 @@ function handleDrop(e) {
   }
   //Don't do anything if dropping the same column we're dragging
   if (DragSrcEle != this) {
-<<<<<<< HEAD
-    //Set the source column's HTML to the HTML of the column we dropped on.
-    e.target.appendChild(
-      document.getElementById(e.dataTransfer.getData("SrcId"))
-    );
-=======
     //Store Destrination Element
     DesId = e.target.id;
     //Set the source column's HTML to the HTML of the column we dropped on.
@@ -133,7 +118,6 @@ function handleDrop(e) {
         e.target.innerHTML = node.Text;
       }
     });
->>>>>>> 39348c1a4cc50209b696476562fa3b1a70cc599b
   }
   //See the section on the DataTransfer object
   return false;
