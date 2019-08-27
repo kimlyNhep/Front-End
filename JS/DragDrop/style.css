@@ -7,7 +7,12 @@
 .components.color {
   background-color: aquamarine;
 }
-
+.components.nocolor {
+  background-color: white;
+}
 .components.over {
   border: 1px solid red;
+}
+.components.return {
+  clear: left;
 }
