@@ -24,8 +24,6 @@ function CreateCell(text) {
   div.setAttribute("draggable", "true");
 
   div.setAttribute("id", number);
-  if (number === 1 || number === 5 || number === 9 || number === 13)
-    div.classList.add("return");
   if (text == "16") {
     text = "";
     div.classList.remove("color");
@@ -47,17 +45,26 @@ function CreateWrap() {
     CreateRow();
   }
 }
-CreateWrap();
 
 //Drag Drop
 var DragSrcEle = null;
 var DesId = "";
+var isDifference = false;
+var isEmpty = false;
 //Drag Start
 function handleDragStart(e) {
-  //this.style.opacity = "0.4"; // this / e.target is the source node.
-  DragSrcEle = this;
-  e.dataTransfer.effectAlled = "move";
-  e.dataTransfer.setData("SrcId", e.target.id);
+  var Node;
+  components.forEach(node => {
+    if (node.id == e.target.id) {
+      Node = node;
+    }
+  });
+  if (Node.class.substr(Node.class.indexOf(" "), 8) != "nocolor") {
+    DragSrcEle = this;
+    e.dataTransfer.effectAlled = "move";
+    e.dataTransfer.setData("SrcId", e.target.id);
+    console.log(Node.class.substr(Node.class.indexOf(" "), 8));
+  } else isEmpty = true;
 }
 //Drag Over
 function handleDragOver(e) {
@@ -81,20 +88,19 @@ function handleDragEnd(e) {
   [].forEach.call(cols, function(col) {
     col.classList.remove("over");
   });
-
-  for (var i = e.target.attributes.length - 1; i >= 0; i--) {
-    e.target.removeAttribute(e.target.attributes[i].name);
-  }
-  components.forEach(node => {
-    if (node.id == DesId) {
-      e.target.setAttribute("class", node.class);
-      e.target.setAttribute("draggable", node.draggable);
-      e.target.setAttribute("id", node.id);
-      e.target.innerHTML = node.Text;
+  if (isDifference && !isEmpty) {
+    for (var i = e.target.attributes.length - 1; i >= 0; i--) {
+      e.target.removeAttribute(e.target.attributes[i].name);
     }
-  });
-  //e.target.innerHTML = JSON.parse(components[DesId - 1]).key;
-  //console.log(JSON.parse(components[DesId - 1]).key);
+    components.forEach(node => {
+      if (node.id == DesId) {
+        e.target.setAttribute("class", node.class);
+        e.target.setAttribute("draggable", node.draggable);
+        e.target.setAttribute("id", node.id);
+        e.target.innerHTML = node.Text;
+      }
+    });
+  }
 }
 //Drop
 function handleDrop(e) {
@@ -102,7 +108,8 @@ function handleDrop(e) {
     e.stopPropagation(); //stop the broswer from redirecting
   }
   //Don't do anything if dropping the same column we're dragging
-  if (DragSrcEle != this) {
+  if (DragSrcEle != this && !isEmpty) {
+    isDifference = true;
     //Store Destrination Element
     DesId = e.target.id;
     //Set the source column's HTML to the HTML of the column we dropped on.
@@ -118,7 +125,7 @@ function handleDrop(e) {
         e.target.innerHTML = node.Text;
       }
     });
-  }
+  } else isDifference = false;
   //See the section on the DataTransfer object
   return false;
 }
