@@ -22,6 +22,7 @@ function CreateCell(text) {
   div.setAttribute("class", "components");
   div.classList.add("color");
   div.setAttribute("draggable", "true");
+
   div.setAttribute("id", number);
   if (text == "16") {
     text = "";
