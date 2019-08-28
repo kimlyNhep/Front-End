@@ -24,7 +24,7 @@ function CreateCell(text) {
   div.setAttribute("draggable", "true");
 
   div.setAttribute("id", number);
-  if (number === 5 || number === 9 || number === 13)
+  if (number === 1 || number === 5 || number === 9 || number === 13)
     div.classList.add("return");
   if (text == "16") {
     text = "";
