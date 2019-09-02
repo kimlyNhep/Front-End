@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--JQUERY-->
+    <script
+      src="./node_modules/jquery/dist/jquery.min.js"
+      type="text/javascript"
+    ></script>
+    <!--JQUERY-->
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="click_me">Click Me</button>
+    <button id="other">Other</button>
+    <button id="show">Show Image</button>
+    <img src="Kimi-no-Na-wa.jpg" id="showImg" width="300" />
+    <script>
+      $("#other").click(function() {
+        alert("Hi There!");
+      });
+      $("#click_me").click(function() {
+        $("#other").click();
+      });
+      $("#show").click(function() {
+        if ($("img:first").is(":hidden")) {
+          //$("img").slideDown("slow");
+          $("img").fadeIn("slow");
+        } else {
+          //$("img").slideUp("slow");
+          $("img").fadeOut("slow");
+        }
+      });
+    </script>
+  </body>
+</html>
