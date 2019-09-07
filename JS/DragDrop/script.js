@@ -8,6 +8,7 @@ var isDifference = false;
 var isEmpty = false;
 var isDropFree = false;
 var cols;
+var tableIndex = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]];
 
 function generateNumber() {
   var random = new Array();
