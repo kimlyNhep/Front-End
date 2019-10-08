@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css?family=Lato|Moulpali|Chenla|Siemreap&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  padding: 10px;
+}
+
+.navbar-top {
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.navbar-top a {
+  font-family: "Moulpali", cursive;
+}
+
+.navbar-top ul li a {
+  color: #fff;
+  font-family: "Moulpali", cursive;
+}
+
+.aside {
+  float: left;
+  width: 25%;
+}
+
+.aside .about {
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.aside .about .side-header {
+  width: 100%;
+  background-color: #292929;
+  padding: 5px;
+  color: #fff;
+  font-family: "Moulpali", cursive;
+}
+
+.aside .about ul li {
+  margin-left: 5px;
+  margin-top: 5px;
+  list-style-type: none;
+}
+
+.aside .about ul li a {
+  color: black;
+  text-decoration: none;
+  font-family: "Siemreap", cursive;
+}
+
+.aside .image__content {
+  margin-top: 20px;
+}
+
+.aside .image__content img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.content__view {
+  position: relative;
+  width: 70%;
+  border: 1px solid black;
+  float: left;
+  border-radius: 12px;
+  margin-left: 2%;
+  padding: 10px;
+  word-wrap: break-word;
+}
+
+.content__view .content__heading {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-family: "Moulpali", cursive;
+  font-weight: bold;
+  font-size: 27px;
+}
+
+.content__view .text__content {
+  margin-top: 35px;
+}
+
+.content__view .text__content .text__heading {
+  font-family: "Moulpali", cursive;
+  text-decoration: underline;
+}
+
+.content__view .text__content .text {
+  font-family: "Siemreap", cursive;
+  line-height: 1.8rem;
+  width: 100%;
+}
+
+.content__view .text__content .text ul {
+  list-style: none;
+}
+/*# sourceMappingURL=viewStyle.css.map */

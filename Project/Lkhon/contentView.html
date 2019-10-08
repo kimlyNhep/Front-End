@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./viewStyle.css" />
+    <title>content View</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-top">
+      <a class="navbar-brand" href="#">ល្ខោនខ្មែរ</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">ទំព័រដើម </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="categories.html"
+              >ប្រភេទល្ខោន<span class="sr-only">(current)</span></a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="aside">
+      <div class="about">
+        <div class="side-header" id="side__header"></div>
+        <ul>
+          <li>
+            <a href="#sub--heading__History">
+              ប្រវិត្តិ
+            </a>
+          </li>
+          <li>
+            <a href="#sub--heading__world-Heritage">បេតិកភណ្ឌពិភពលោក</a>
+          </li>
+          <li>
+            <a href="#sub--heading__reference">
+              ប្រភពឯកសារ
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="image__content" id="image__Src">
+        <img src="#" alt="" />
+      </div>
+    </div>
+    <div class="content__view">
+      <div class="content__heading" id="content__heading"></div>
+      <div class="text__content">
+        <p class="text__heading" id="sub--heading__about"></p>
+        <p class="text" id="about__text"></p>
+        <p class="text__heading" id="sub--heading__History">
+          ២.ប្រវិត្តិ
+        </p>
+        <p class="text" id="history__text"></p>
+        <p class="text__heading" id="sub--heading__world-Heritage">
+          ៣.បេតិកភណ្ឌពិភពលោក
+        </p>
+        <p class="text" id="world-Heritage__text"></p>
+        <p class="text__heading" id="sub--heading__reference">
+          ៤.ប្រភពឯកសារ
+        </p>
+        <div class="text" id="reference__text"></div>
+      </div>
+    </div>
+    <script src="./content.js"></script>
+  </body>
+</html>

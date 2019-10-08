@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css?family=Lato|Moulpali|Chenla|Siemreap&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: "Siemreap", cursive;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: #d2dbdd;
+  padding: 20px;
+}
+.navbar-top {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  a {
+    font-family: "Moulpali", cursive;
+  }
+  ul {
+    li {
+      a {
+        color: white;
+      }
+    }
+  }
+}
+
+.cards {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .card__format {
+    .card__info-hover {
+      position: absolute;
+      padding: 16px;
+      width: 100%;
+      opacity: 0;
+      top: 0;
+      .card__like {
+        width: 18px;
+      }
+      .card__clock-info {
+        float: right;
+        .card__clock {
+          width: 15px;
+          vertical-align: middle;
+          fill: #ad7d52;
+        }
+        .card__time {
+          font-size: 12px;
+          color: #ad7d52;
+          vertical-align: middle;
+          margin-left: 5px;
+        }
+      }
+    }
+    .card__img {
+      visibility: hidden;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 235px;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+    }
+    .card_link {
+      .card__img--hover {
+        transition: 0.2s all ease-out;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        position: absolute;
+        height: 235px;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        top: 0;
+      }
+    }
+    .card__info {
+      z-index: 2;
+      background-color: #fff;
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+      padding: 16px 24px 24px 24px;
+
+      .card__category {
+        font-family: "Moulpali", cursive;
+        text-transform: uppercase;
+        font-size: 13px;
+        letter-spacing: 2px;
+        font-weight: 500;
+        color: #868686;
+      }
+      .card__title {
+        margin-top: 5px;
+        margin-bottom: 10px;
+        font-family: "Siemreap", cursive;
+        font-size: 20px;
+      }
+      .card__by {
+        .card__author {
+          font-size: 11px;
+          font-family: "Moulpali", cursive;
+          font-weight: 500;
+          text-decoration: none;
+          color: #ad7d52;
+        }
+      }
+    }
+  }
+}
+
+.card {
+  margin-right: 25px;
+  margin-bottom: 25px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
+  background-color: #fff;
+  position: relative;
+  width: 250px;
+  border-radius: 12px !important;
+  overflow: hidden;
+  box-shadow: 0px 13px 10px -7px #0000001a;
+
+  &:hover {
+    box-shadow: 0px 30px 18px -8px #0000001a;
+    transform: scale(1.1, 1.1);
+  }
+
+  &:hover .card__img--hover {
+    height: 100% !important;
+    opacity: 0.3;
+  }
+
+  &:hover .card__info {
+    background-color: transparent;
+    position: relative;
+  }
+
+  &:hover .card__info-hover {
+    opacity: 1;
+  }
+}
