@@ -104,4 +104,8 @@ body {
 .content__view .text__content .text ul {
   list-style: none;
 }
+
+.content__view .text__content .text .para {
+  margin-top: 1rem;
+}
 /*# sourceMappingURL=viewStyle.css.map */
