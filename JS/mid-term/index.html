@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Phone Shop</title>
+    <style>
+      input {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="form">
+      <label>Type </label>
+      <input type="radio" name="type" value="Window" /> Window
+      <input type="radio" name="type" value="Android" /> Android
+      <input type="radio" name="type" value="iOS" /> iOS <br />
+      <label>Code</label>
+      <input type="text" name="code" id="code" /> <br />
+      <label>Qty</label>
+      <input type="number" name="qty" min="1" id="qty" /> <br />
+      <label>Unit Price</label>
+      <select id="unit-price">
+        <option value="300">300</option>
+        <option value="500">500</option>
+        <option value="700">700</option>
+        <option value="800">800</option>
+        <option value="1000">1000</option>
+      </select>
+      <br />
+      <input type="button" name="btnOrder" value="Order" id="btnOrder" />
+    </form>
+    <textarea name="total" id="text-area" cols="100" rows="10"> </textarea>
+    <script>
+      var ele = document.getElementsByName("type");
+      var code = document.getElementById("code");
+      var qty = document.getElementById("qty");
+      var e = document.getElementById("unit-price");
+
+      function order(os, code, qty, uprice) {
+        var tt = qty * uprice;
+        var list = os + "\t" + code + "\t" + qty + "\t" + uprice + "\t" + tt;
+        return list;
+      }
+      document.getElementById("btnOrder").addEventListener("click", function() {
+        var type;
+        for (var i = 0; i < ele.length; i++) {
+          if (ele[i].checked) type = ele[i].value;
+        }
+        var unit_price = e.options[e.selectedIndex].value;
+        var textare = document.getElementById("text-area");
+        var text = order(type, code.value, qty.value, unit_price);
+        textare.value += text;
+      });
+    </script>
+  </body>
+</html>

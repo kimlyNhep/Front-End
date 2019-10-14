@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Phone Shop</title>
+    <style>
+      input {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="form">
+      <h4>Order Computer Fomr</h4>
+      <label>Code</label>
+      <input type="text" name="code" id="code" /> <br />
+      <label>Model</label>
+      <select id="">
+        <option value="300">DELL</option>
+        <option value="500">IBM/option> </option
+        ><option value="700">TOSHIBA</option>
+      </select>
+      <br />
+      <label>RAM </label>
+      <input type="radio" name="type" value="128" /> 128
+      <input type="radio" name="type" value="256" /> 256
+      <input type="radio" name="type" value="512" /> 512 <br />
+      <label>Unite Price</label>
+      <input type="number" name="uprice" id="uprice" /> <br />
+      <label>Qty</label>
+      <input type="number" name="qty" min="1" id="qty" /> <br />
+      <input type="button" name="btnOrder" value="Order" id="btnOrder" />
+      <input type="button" name="btnTotal" value="Total" id="btnTotal" />
+    </form>
+    <table id="tblResult"></table>
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+      var ele = $('[name="type"]');
+      var code = $("#code");
+      var qty = $("#qty");
+      var e = $("#unit-price");
+      var displayText = "";
+
+      function order(code, model, ram, uprice, qty) {
+        var tt = qty * uprice;
+        return { code, model, ram, uprice, qty, tt };
+      }
+      $("#btnOrder").click(function(event) {
+        var type;
+        for (var i = 0; i < ele.length; i++) {
+          if (ele[i].checked) type = ele[i].value;
+        }
+        var unit_price = e.find(":selected").text();
+        var text = order(code.val(), unit_price, ele);
+        var htmlText = `<tr>
+            <td>%code%</td>
+            <td>%model%</td>
+            <td>%ram%</td>
+            <td>%unite-price%</td>
+            <td>%qty%</td>
+            <td>%total%</td>
+          </tr>`;
+        newHtml = htmlText.replace("%code%", text.code);
+        newHtml = newHtml.replace("%model%", text.model);
+        newHtml = newHtml.replace("%ram%", text.ram);
+        newHtml = newHtml.replace("%unite-price%", text.uprice);
+        newHtml = newHtml.replace("%qty%", text.qty);
+        newHtml = newHtml.replace("%total%", text.tt);
+        $(newHtml).insertBefore(table);
+      });
+
+      $("#btnTotal").click(function(event) {
+        $(
+          `<input type="text" name="total" id="totaltxt" value=${800}>`
+        ).appendTo("#form");
+      });
+    </script>
+  </body>
+</html>

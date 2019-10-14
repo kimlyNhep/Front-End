@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <input type="button" name="btnLeft" value="&lt;" id="btnLeft" />
+      <img
+        src="./Material/Trip.png"
+        alt=""
+        style="width: 500px"
+        id="image-source"
+        class=""
+      />
+      <input type="button" name="btnLeft" value="&gt;" id="btnRight" />
+    </div>
+    <script>
+      let source = "./Material/";
+      let images = [
+        "airplan.png",
+        "best_place.png",
+        "bike.png",
+        "car.png",
+        "Trip.png",
+        "Destination.png",
+        "journey.png",
+        "motor.png",
+        "selection.png"
+      ];
+      let obj = document.getElementById("image-source");
+      document.getElementById("btnLeft").addEventListener("click", function() {
+        let index = images.indexOf(obj.getAttribute("src").substr(11));
+        index--;
+        if (index < 0) {
+          index = images.length - 1;
+        }
+        obj.setAttribute("src", source + images[index]);
+      });
+      document.getElementById("btnRight").addEventListener("click", function() {
+        let index = images.indexOf(obj.getAttribute("src").substr(11));
+        index++;
+        if (index >= images.length) {
+          index = -1;
+        }
+        obj.setAttribute("src", source + images[index]);
+      });
+    </script>
+  </body>
+</html>
