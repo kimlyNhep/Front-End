@@ -38,40 +38,115 @@ var UIController = (function() {
       return DOMString;
     },
     addCardList: function(cardObj) {
-      let htmlText = `<article class="card card__format" id="card__%id%">
-                        <div class="card__info-hover">
-                          <svg class="card__like" viewBox="0 0 24 24">
-                            <path
-                              fill="#000000"
-                              d="M12.1,18.55L12,18.65L11.89,18.55C7.14,14.24 4,11.39 4,8.5C4,6.5 5.5,5 7.5,5C9.04,5 10.54,6 11.07,7.36H12.93C13.46,6 14.96,5 16.5,5C18.5,5 20,6.5 20,8.5C20,11.39 16.86,14.24 12.1,18.55M16.5,3C14.76,3 13.09,3.81 12,5.08C10.91,3.81 9.24,3 7.5,3C4.42,3 2,5.41 2,8.5C2,12.27 5.4,15.36 10.55,20.03L12,21.35L13.45,20.03C18.6,15.36 22,12.27 22,8.5C22,5.41 19.58,3 16.5,3Z"
-                            />
-                          </svg>
-                          <div class="card__clock-info">
-                            <svg class="card__clock" viewBox="0 0 24 24">
-                              <path
-                                d="M12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6A7,7 0 0,1 19,13A7,7 0 0,1 12,20M19.03,7.39L20.45,5.97C20,5.46 19.55,5 19.04,4.56L17.62,6C16.07,4.74 14.12,4 12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22C17,22 21,17.97 21,13C21,10.88 20.26,8.93 19.03,7.39M11,14H13V8H11M15,1H9V3H15V1Z"
-                              /></svg
-                            ><span class="card__time">15 min</span>
-                          </div>
-                        </div>
-                        <div class="card__img" style="background-image: %Src%"></div>
-                        <a href="#" class="card_link">
-                          <div class="card__img--hover" style="background-image: %Src%"></div>
-                        </a>
-                        <div class="card__info">
-                          <span class="card__category">%category%</span>
-                          <h3 class="card__title">%title%</h3>
-                          <span class="card__by"
-                            >by
-                            <a href="#" class="card__author" title="author"
-                              >%author%</a
-                            ></span
-                          >
-                        </div>
-                      </article>`;
+      let htmlText = `
+      <div class="cardContainer inactive" id="card__%id%">
+      <div class="card">
+        <div class="side front">
+          <div class="img img1" style="background-image: url(%Src%)"></div>
+          <div class="info">
+            <div class="card--category">%category%</div>
+            <p class="card--author">រៀបរៀងដោយៈ <br>%author%</p>
+          </div>
+        </div>
+        <div class="side back">
+          <div class="info">
+            <div class="card--category">%category%</div>
+            <div class="reviews">
+              <svg
+                fill="#FFC324"
+                height="24"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+                <path d="M0 0h24v24H0z" fill="none" />
+              </svg>
+              <svg
+                fill="#FFC324"
+                height="24"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+                <path d="M0 0h24v24H0z" fill="none" />
+              </svg>
+              <svg
+                fill="#FFC324"
+                height="24"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+                <path d="M0 0h24v24H0z" fill="none" />
+              </svg>
+              <svg
+                fill="#FFC324"
+                height="24"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                />
+                <path d="M0 0h24v24H0z" fill="none" />
+              </svg>
+              <svg
+                fill="#FFC324"
+                height="24"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <defs><path d="M0 0h24v24H0V0z" id="a" /></defs>
+                <clipPath id="b">
+                  <use overflow="visible" xlink:href="#a" />
+                </clipPath>
+                <path
+                  clip-path="url(#b)"
+                  d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4V6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+                />
+              </svg>
+              <p>23 Reviews</p>
+            </div>
+            <p>%title%</p>
+            <div class="btn">
+              <h4>អានបន្ថែម</h4>
+              <svg
+                fill="#333"
+                height="24"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z" />
+                <path d="M0-.25h24v24H0z" fill="none" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>`;
       let newHtml = htmlText.replace("%id%", cardObj.id);
       newHtml = newHtml.replace(new RegExp("%Src%", "g"), cardObj.imgSrc);
-      newHtml = newHtml.replace("%category%", cardObj.category);
+      newHtml = newHtml.replace(
+        new RegExp("%category%", "g"),
+        cardObj.category
+      );
       newHtml = newHtml.replace("%title%", cardObj.title);
       newHtml = newHtml.replace("%author%", cardObj.author);
       document
@@ -87,12 +162,19 @@ var globalController = (function(cardCtrl, UICtrl) {
     document
       .getElementById(DOM.rootCard)
       .addEventListener("click", function(event) {
-        let itemID = event.target.parentNode.parentNode.id;
-        splitID = itemID.split("__");
-        ID = splitID[1];
-        if (ID !== "" && !isNaN(ID)) {
-          // Set ID to URL
-          location.href = "./contentView.html?" + ID;
+        let itemID =
+          event.target.parentNode.parentNode.parentNode.parentNode.parentNode
+            .id;
+        let card =
+          event.target.parentNode.parentNode.parentNode.parentNode.parentNode;
+        console.log(card.classList.contains("active"));
+        if (!card.classList.contains("active")) {
+          splitID = itemID.split("__");
+          ID = splitID[1];
+          if (ID !== "" && !isNaN(ID)) {
+            // Set ID to URL
+            location.href = "./contentView.html?" + ID;
+          }
         }
       });
   };
@@ -101,7 +183,7 @@ var globalController = (function(cardCtrl, UICtrl) {
 
     // 1. add card to list
     let cardItem = cardCtrl.addCard(
-      `url('./images/lakhon-khol.jpg')`,
+      `./images/lakhon-khol.jpg`,
       "ល្ខោនខោល",
       "ល្ខោនខោល ឬ ល្ខោនពាក់របាំងមុខ គឺជាល្ខោនមួយដែលមានលក្ខណៈចំណាស់របស់កម្ពុជា...",
       "ក្រសួងវប្បធម៌ និង វិចិត្រសិល្បៈ"
@@ -113,7 +195,7 @@ var globalController = (function(cardCtrl, UICtrl) {
 
     // 1. add card to list
     cardItem = cardCtrl.addCard(
-      `url('./images/basac.jpg')`,
+      `./images/basac.jpg`,
       "ល្ខោនបាសាក់",
       "ល្ខោន​បាសាក់​មាន​ដើម​កំណើត​នៅ​ស្រុក​បាសាក់​ខេត្ត​ឃ្លាំង​ទល់​មុខ​ព្រះ​ត្រពាំង​កម្ពុជា​ក្រោម...",
       "ក្រសួងវប្បធម៌ និង វិចិត្រសិល្បៈ"
@@ -125,7 +207,7 @@ var globalController = (function(cardCtrl, UICtrl) {
 
     // 1. add card to list
     cardItem = cardCtrl.addCard(
-      `url('./images/sbek__thom.jpg')`,
+      `./images/sbek__thom.jpg`,
       "ល្ខោនស្រមោលស្បែកធំ",
       "ល្ខោនស្បែកធំ គឺជាល្ខោនដែលមានវ័យចំណាស់បំផុត ក្នុងប្រទេសកម្ពុជាដែលអាចជាសំណល់ ពីសម័យបុរាណ...",
       "ក្រសួងវប្បធម៌ និង វិចិត្រសិល្បៈ"
@@ -137,7 +219,7 @@ var globalController = (function(cardCtrl, UICtrl) {
 
     // 1. add card to list
     cardItem = cardCtrl.addCard(
-      `url('./images/sbek__touch.jpg')`,
+      `./images/sbek__touch.jpg`,
       "ល្ខោនស្រមោលស្បែកតូច",
       "ល្ខោនស្បែកតូច ត្រូវបានគេស្គាល់ក្នុងភូមិកំពង់តាយ៉ុង ខេត្តសៀមរាប។ តុក្កតាធ្វើពីស្បែកសត្វស្លាប់ ដៃនិងជើងអាចធ្វើចលនា...",
       "ក្រសួងវប្បធម៌ និង វិចិត្រសិល្បៈ"
@@ -149,7 +231,7 @@ var globalController = (function(cardCtrl, UICtrl) {
 
     // 1. add card to list
     cardItem = cardCtrl.addCard(
-      `url('./images/MoHory.jpg')`,
+      `./images/MoHory.jpg`,
       "ល្ខោនមហោរី",
       "ល្ខោនមហោរី គឺជាសិល្បៈចំណាស់ និងជាទម្រង់នៃរបាំ ដែលបានបង្កើតនៅក្នុងឆ្នាំ១៩៦០ ដោយ ផ្អែកទៅលើចម្រៀងមហោរី ការរាំ និងការនិយាយគ្នា។",
       "ក្រសួងវប្បធម៌ និង វិចិត្រសិល្បៈ"
@@ -161,7 +243,7 @@ var globalController = (function(cardCtrl, UICtrl) {
 
     // 1. add card to list
     cardItem = cardCtrl.addCard(
-      `url('./images/Yii-Ke.jpg')`,
+      `./images/Yii-Ke.jpg`,
       "ល្ខោនយីកេ",
       "យីកេ គឺជា ទម្រង់នៃប្រភេទ តន្រ្តីផង ល្ខោនផង ព្រមទាំង ជា របាំផង...",
       "ក្រសួងវប្បធម៌ និង វិចិត្រសិល្បៈ"
@@ -173,7 +255,7 @@ var globalController = (function(cardCtrl, UICtrl) {
 
     // 1. add card to list
     cardItem = cardCtrl.addCard(
-      `url('./images/PolSrey.jpg')`,
+      `./images/PolSrey.jpg`,
       "ល្ខោនពោលស្រី",
       " ល្ខោនពោលស្រីជាកូនបង្កើតល្ខោនព្រះរាជទ្រព្យ ល្ខោនពោលស្រី គឺជាទម្រង់ល្ខោនច្រៀងរាំបុរាណមួយដែលមានលក្ខណៈស្រដៀងគ្នានឹងសិល្បៈល្ខោនក្បាច់បុរាណដែរ...",
       "ក្រសួងវប្បធម៌ និង វិចិត្រសិល្បៈ"
@@ -185,7 +267,7 @@ var globalController = (function(cardCtrl, UICtrl) {
 
     // 1. add card to list
     cardItem = cardCtrl.addCard(
-      `url('./images/Niyey.jpg')`,
+      `./images/Niyey.jpg`,
       "ល្ខោននិយាយ",
       " ល្ខោននិយាយជាល្ខោនបែបទំនើបមួយដែលផ្ដោតលើទេពកោសល្យក្នុងការប្រើប្រាស់ពាក្យសម្ដីឆ្លើយឆ្លង...",
       "ក្រសួងវប្បធម៌ និង វិចិត្រសិល្បៈ"
