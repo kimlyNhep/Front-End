@@ -165,16 +165,20 @@ var globalController = (function(cardCtrl, UICtrl) {
         let itemID =
           event.target.parentNode.parentNode.parentNode.parentNode.parentNode
             .id;
-        let card =
-          event.target.parentNode.parentNode.parentNode.parentNode.parentNode;
-        console.log(card.classList.contains("active"));
-        if (!card.classList.contains("active")) {
+        let card = event.target.parentNode.parentNode.parentNode.parentNode;
+        let CardID =
+          event.target.parentNode.parentNode.parentNode.parentNode.id;
+        let cardClass = event.target.parentNode.parentNode.parentNode;
+        console.log(card, itemID);
+        if (card.classList.contains("active")) {
           splitID = itemID.split("__");
-          ID = splitID[1];
-          if (ID !== "" && !isNaN(ID)) {
-            // Set ID to URL
-            location.href = "./contentView.html?" + ID;
-          }
+        } else if (cardClass.classList.contains("active")) {
+          splitID = CardID.split("__");
+        }
+        ID = splitID[1];
+        if (ID !== "" && !isNaN(ID)) {
+          // Set ID to URL
+          location.href = "./contentView.html?" + ID;
         }
       });
   };
